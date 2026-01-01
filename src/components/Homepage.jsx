@@ -44,10 +44,10 @@ const Homrpage = () => {
         </Col>
       </Row>
       <div className="home-heading-container">
-        <Typography.Title level={2} className="home-title">
+        <Typography.Title level={3} className="home-title">
           Top 10 Cryptocurrencies in the world
         </Typography.Title>
-        <Typography.Title level={3} className="show-more">
+        <Typography.Title level={4} className="show-more">
           <Link to="/cryptocurrencies">Show More </Link>
         </Typography.Title>
       </div>
