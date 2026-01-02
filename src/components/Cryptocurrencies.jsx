@@ -3,6 +3,7 @@ import millify from "millify";
 import { Card, Col, Input, Row } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 function Cryptocurrencies({ simplified }) {
   const count = simplified ? 10 : 100;
@@ -17,7 +18,7 @@ function Cryptocurrencies({ simplified }) {
     setCryptos(filteredData);
   }, [cryptosList, searchTream]);
 
-  if (isFetching) return <p>Loading...</p>;
+  if (isFetching) return <Loader />;
 
   return (
     <>
@@ -28,9 +29,9 @@ function Cryptocurrencies({ simplified }) {
         />
       </div>
       <Row gutter={[32, 32]} className="crypto-card-container">
-        {cryptos?.map((currency) => (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
-            <Link to={`crypto/${currency.id}`}>
+        {cryptos?.map((currency, i) => (
+          <Col xs={24} sm={12} lg={6} className="crypto-card" key={i}>
+            <Link to={`/crypto/${currency.uuid}`}>
               <Card
                 title={`${currency.rank}. ${currency.name}`}
                 extra={<img className="crypto-image" src={currency.iconUrl} />}

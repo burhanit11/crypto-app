@@ -5,6 +5,7 @@ import {
   Exchanges,
   Cryptocurrencies,
   News,
+  CryptoDetails,
 } from "./components";
 import { Layout, Typography, Space } from "antd";
 import "./app.css";
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Homepage />} />
               <Route path="/exchanges" element={<Exchanges />} />
               <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+              <Route path="/crypto/:coinId" element={<CryptoDetails />} />
               <Route path="/news" element={<News />} />
             </Routes>
           </div>

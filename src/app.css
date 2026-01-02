@@ -358,7 +358,7 @@ a:hover {
   min-height: 65vh !important;
 }
 .crypto-card {
-  min-width: 250px;
+  /* min-width: 250px; */
 }
 .crypto-card .crypto-image {
   width: 35px;
